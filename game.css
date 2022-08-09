@@ -1,0 +1,43 @@
+body{
+    background: rgb(0, 213, 255);
+}
+h1{
+    text-align: center;
+    color: black;
+}
+h3.n0{
+    text-align: center;
+    color: black;
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+h3.n1{
+    color: black;
+    position: fixed;
+    top: 100px;
+    left: 25px;
+}
+h3.n2{
+    color: black;
+    position: fixed;
+    top: 100px;
+    left: 1275px;
+}
+.box{
+    position: fixed;
+    left: 30%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 50px 110px 110px 110px 110px 110px;
+}
+.g1{
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    font-size: 40px;
+}
