@@ -1,10 +1,12 @@
 ShootPlayer1_Off();
 ShootPlayer2_Off();
-document.addEventListener("keypress", function(event) {
-	const element = document.getElementById("text");
+document.addEventListener("keypress", Start);
+function Start(event){
+    const element = document.getElementById("text");
     element.innerHTML="";
     randomNumber();
-});
+    document.removeEventListener("keypress", Start);
+}
 var p1b1=0;
 var p1b2=0;
 var p1b3=0;
@@ -267,6 +269,7 @@ function gameOver(){
     document.getElementById('text').innerHTML = "Press any key to start";
     ShootPlayer1_Off();
     ShootPlayer2_Off();
+    document.addEventListener("keypress", Start);
 }
 function ShootPlayer1_Off(){
     document.getElementById("b1").disabled=true;

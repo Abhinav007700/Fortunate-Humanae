@@ -1,8 +1,10 @@
-document.addEventListener("keypress", function(event) {
-	const element = document.getElementById("text");
+document.addEventListener("keypress", Start);
+function Start(event){
+    const element = document.getElementById("text");
     element.innerHTML="";
     randomNumber();
-});
+    document.removeEventListener("keypress", Start);
+}
 var p1b1=0;
 var p1b2=0;
 var p1b3=0;
@@ -132,7 +134,6 @@ function randomNumber(){
             gameOver();
         }
     },100);
-
     const myTimeout = setTimeout(randomNumber,1500);
 }
 function figureMaking(id, number){
@@ -179,4 +180,5 @@ function gameOver(){
     document.getElementById("01").innerHTML = "Box Number(Player 1): --";
     document.getElementById("02").innerHTML = "Box Number(Player 2): --";
     document.getElementById('text').innerHTML = "Press any key to start";
+    document.addEventListener("keypress", Start);
 }
